@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class Multibau extends ApplicationAdapter {
+	GameClient client;
+
 	SpriteBatch batch;
 	Texture img;
 
@@ -13,6 +15,9 @@ public class Multibau extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
+
+		client = new GameClient("Player 1");
+		client.connectClient();
 	}
 
 	@Override
@@ -27,5 +32,7 @@ public class Multibau extends ApplicationAdapter {
 	public void dispose () {
 		batch.dispose();
 		img.dispose();
+
+		client.terminateClient();
 	}
 }
