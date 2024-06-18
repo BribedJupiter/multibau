@@ -8,7 +8,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class Multibau extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
